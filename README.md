@@ -1,14 +1,5 @@
-## Building an own image + publish it
-
-```bash
-# Build image
-docker build -t nordwind/claude:latest .
-```
-
-```bash
-# Push to Docker Hub
-docker push nordwind/claude:latest
-```
+# Claude Code Docker Image
+Ready to start for usage in any project 
 
 ## Docker Compose Configuration
 
@@ -22,3 +13,16 @@ services:
     volumes:
       - .:/app
 ```
+
+## Building own image and publish it
+
+```bash
+# Build image
+docker build -t nordwind/claude:latest .
+```
+
+```bash
+# Push to Docker Hub
+docker push nordwind/claude:latest
+```
+
