@@ -1,7 +1,5 @@
 FROM node:24-slim
 
-# Global package installation
-RUN npm install -g @anthropic-ai/claude-code
 
 # Set working directory
 WORKDIR /app
@@ -28,6 +26,9 @@ EXPOSE 3000
 
 # Set up non-root user
 USER node
+
+# Global package installation
+RUN npm install -g @anthropic-ai/claude-code
 
 # Keep container running
 CMD ["tail", "-f", "/dev/null"]
