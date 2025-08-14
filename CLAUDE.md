@@ -30,19 +30,27 @@ Connect to the container:
 docker exec -it code-assistent bash
 ```
 
+Stop the development environment:
+```bash
+docker-compose down
+```
+
 ## Architecture
 
 The project consists of:
 
 - **Dockerfile**: Defines a Node.js 24 slim-based container with Claude Code installed globally, plus Python 3 and essential tools
 - **docker-compose.yml**: Orchestrates a single service called `coding-agent` that mounts the current directory to `/app` in the container
+- **Claude-Docker.iml**: IntelliJ IDEA module file for IDE integration
 - **README.md**: Contains basic Docker build and push commands
 
 ## Container Environment
 
 - Base: Node.js 24 slim
 - Working directory: `/app`
-- Pre-installed: `@anthropic-ai/claude-code`, Python 3, pip, venv, findutils
+- Pre-installed: `@anthropic-ai/claude-code`, Python 3, pip, venv, findutils, zsh with powerline10k theme
+- Default shell: zsh
+- Default editor: nano
 - Port exposed: 3000
 - Container runs indefinitely with `tail -f /dev/null`
 - Current directory is mounted to `/app` for persistent development
